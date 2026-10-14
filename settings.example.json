@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      { "hooks": [{ "type": "command", "command": "python3 ~/claude-voice/stop_voice.py" }] }
+    ],
+    "Notification": [
+      { "matcher": "permission_prompt", "hooks": [{ "type": "command", "command": "~/claude-voice/play.sh 確認待ち" }] },
+      { "matcher": "idle_prompt", "hooks": [{ "type": "command", "command": "~/claude-voice/play.sh 次の指示待ち" }] }
+    ],
+    "StopFailure": [
+      { "hooks": [{ "type": "command", "command": "~/claude-voice/play.sh エラーで止まった" }] }
+    ]
+  }
+}
