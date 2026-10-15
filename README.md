@@ -3,7 +3,9 @@
 Claude Code の作業が終わったら、AIで作った声で知らせる仕組みです。
 場面ごとに鳴らし分けるだけでなく、返事の中身を読んで「決めてほしいことがあります」「動画ができました 確認してください」のように言い分けます。
 
-解説記事：〔Zennの記事のURL〕
+解説記事：https://zenn.dev/takamasa_ai/articles/14dfe1741e140d
+
+例の声（Takamasa）は ElevenLabs のボイスライブラリで公開しています：https://elevenlabs.io/app/voice-library?voiceId=xeuGp5e7xzV9lMbAK8Vd
 
 ## 入っているもの
 
