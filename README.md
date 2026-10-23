@@ -43,6 +43,31 @@ python3 make_sounds.py
 - モデルは `eleven_v4` です。日本語は v4 がいちばん自然でした
 - APIキーは「テキスト読み上げ」だけの権限にして、クレジットの上限を入れておくのがおすすめです
 
+## プレゼンの冒頭をAIの声で流す（`presentation/`）
+
+解説記事（2本目）：（公開したらここにリンク）
+
+長い原稿を段落ごとに作って1本につなぎ、スライドのボタンで流すための道具です。
+
+| ファイル | 中身 |
+|---|---|
+| `presentation/音声台本.tsv` | 台本の表。1行＝1段落（例は3行） |
+| `presentation/make_voices.py` | 表の行を段落ごとに音声にし、まとめ先ごとに1本につなぐ。前後の段落を `previous_text`／`next_text` で渡す |
+| `presentation/join_with_gap.py` | 段落の間に0.7秒の無音を入れて1本のm4aにする（Mac標準の `afconvert` とPythonだけ・ffmpeg不要） |
+| `presentation/slide_example.html` | 音声をボタンで流すスライドの最小の例 |
+
+```bash
+cd presentation
+export ELEVENLABS_API_KEY=（自分のキー）
+python3 make_voices.py --dry        # APIを呼ばずに、作る行と文字数だけ見る
+python3 make_voices.py              # 作る（作り済みの段落は作らない）
+python3 join_with_gap.py 音声 冒頭 冒頭.m4a   # 間を入れて1本に
+```
+
+- 作り直したい段落は `音声/` のそのファイルを消してから、もう一度実行します
+- 使った文字数は `文字数の記録.csv` に残ります
+- 声は最初から作者の声です。`VOICE_ID=（声のID）` で変えられます
+
 ## 使っていい範囲
 
 `sounds/` の声は、AIで作った作者（Takamasa）の声です。

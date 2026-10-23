@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>冒頭の音声を流すスライドの例</title>
+<!-- make_voices.py と join_with_gap.py で作った音声を、ボタンで流す最小の例。もう一度押すと止まる -->
+<audio id="aud-intro" src="冒頭.m4a" preload="auto"></audio>
+<section>
+  <h1>AIって言うけど、私に何が使えるの？</h1>
+  <button id="play">▶ 冒頭を流す</button>
+</section>
+<script>
+const a = document.getElementById('aud-intro');
+document.getElementById('play').onclick = () => {
+  if (!a.paused) { a.pause(); a.currentTime = 0; return; }
+  a.play();
+};
+</script>
