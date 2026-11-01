@@ -45,7 +45,7 @@ python3 make_sounds.py
 
 ## プレゼンの冒頭をAIの声で流す（`presentation/`）
 
-解説記事（2本目）：（公開したらここにリンク）
+解説記事（2本目）：https://zenn.dev/takamasa_ai/articles/b33ee351811404
 
 長い原稿を段落ごとに作って1本につなぎ、スライドのボタンで流すための道具です。
 
